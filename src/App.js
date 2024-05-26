@@ -15,7 +15,6 @@ function App() {
   };
 
   const handleYesClick = () => {
-    console.log(yesSound);
     yesSound.play();
     alert("Чекаю тебе в редрумі, маленька 😍🫣🤫😮‍💨😈💦");
     sendEmail();
@@ -27,23 +26,23 @@ function App() {
   };
 
   const sendEmail = () => {
-    // emailjs
-    //   .send(
-    //     process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
-    //     process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
-    //     templateParams,
-    //     {
-    //       publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
-    //     }
-    //   )
-    //   .then(
-    //     (response) => {
-    //       console.log("SUCCESS!", response.status, response.text);
-    //     },
-    //     (err) => {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
+        templateParams,
+        {
+          publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
   };
 
   return (
