@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import emailjs from "@emailjs/browser";
@@ -6,8 +6,7 @@ import emailjs from "@emailjs/browser";
 function App() {
   const [position, setPosition] = useState({ top: "40%", left: "40%" });
 
-  const audioRef = useRef();
-  // const yesSound = new Audio(`${process.env.PUBLIC_URL}/sexytime.ogg`);
+  const yesSound = new Audio(`${process.env.PUBLIC_URL}/sexytime.mp3`);
 
   const movePopup = () => {
     const newTop = Math.random() * 70;
@@ -16,8 +15,8 @@ function App() {
   };
 
   const handleYesClick = () => {
-    // yesSound.play();
-    audioRef?.current?.play();
+    console.log(yesSound);
+    yesSound.play();
     alert("Чекаю тебе в редрумі, маленька 😍🫣🤫😮‍💨😈💦");
     sendEmail();
   };
@@ -28,23 +27,23 @@ function App() {
   };
 
   const sendEmail = () => {
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
-        process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
-        templateParams,
-        {
-          publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
-        }
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );
+    // emailjs
+    //   .send(
+    //     process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
+    //     process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
+    //     templateParams,
+    //     {
+    //       publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
+    //     }
+    //   )
+    //   .then(
+    //     (response) => {
+    //       console.log("SUCCESS!", response.status, response.text);
+    //     },
+    //     (err) => {
+    //       console.log("FAILED...", err);
+    //     }
+    //   );
   };
 
   return (
@@ -53,10 +52,6 @@ function App() {
         <p>Вірт сьогодні ввечері?)))</p>
         <div className="btnWrapper">
           <button onClick={handleYesClick}>Yes!!!</button>
-          <audio
-            ref={audioRef}
-            src={`${process.env.PUBLIC_URL}/sexytime.ogg`}
-          />
           <button onMouseOver={movePopup} onTouchStart={movePopup}>
             No:(
           </button>
