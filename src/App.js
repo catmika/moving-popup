@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [position, setPosition] = useState({ top: "40%", left: "40%" });
+
+  const movePopup = () => {
+    const newTop = Math.random() * 70;
+    const newLeft = Math.random() * 48;
+    setPosition({ top: `${newTop}%`, left: `${newLeft}%` });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="popup" style={{ top: position.top, left: position.left }}>
+        <p>Вірт сьогодні ввечері?)))</p>
+        <div className="btnWrapper">
+          <button
+            onClick={() => alert("Чекаю тебе в редрумі, маленька 😍🫣🤫😮‍💨😈💦")}
+          >
+            Yes!!!
+          </button>
+          <button onMouseOver={movePopup} onTouchStart={movePopup}>
+            No:(
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
