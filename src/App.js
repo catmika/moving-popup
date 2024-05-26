@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 function App() {
   const [position, setPosition] = useState({ top: "40%", left: "40%" });
 
-  const yesSound = new Audio("/sexytime.ogg");
+  const yesSound = new Audio(`${process.env.PUBLIC_URL}/sexytime.ogg`);
 
   const movePopup = () => {
     const newTop = Math.random() * 70;
