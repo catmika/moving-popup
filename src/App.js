@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <div className="popup" style={{ top: position.top, left: position.left }}>
-        <p>Джігі-джага сьогодні ввечері?)))</p>
+        <h3>Джігі-джага сьогодні ввечері?)))</h3>
         <div className="btnWrapper">
           <button onClick={handleYesClick}>Yes!!!</button>
           <button onMouseOver={movePopup} onTouchStart={movePopup}>
