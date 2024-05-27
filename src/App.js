@@ -16,13 +16,13 @@ function App() {
 
   const handleYesClick = () => {
     yesSound.play();
-    alert("Чекаю тебе в редрумі, маленька 😍🫣🤫😮‍💨😈💦");
+    alert("Oh, you touch my talala, oh, my ding-ding-dong 😍🫣🤫😮‍💨😈💦");
     sendEmail();
   };
 
   const templateParams = {
     name: "Maksymka",
-    notes: "SHE SAID YES!",
+    notes: "YES!",
   };
 
   const sendEmail = () => {
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <div className="popup" style={{ top: position.top, left: position.left }}>
-        <p>Вірт сьогодні ввечері?)))</p>
+        <p>Джігі-джага сьогодні ввечері?)))</p>
         <div className="btnWrapper">
           <button onClick={handleYesClick}>Yes!!!</button>
           <button onMouseOver={movePopup} onTouchStart={movePopup}>
